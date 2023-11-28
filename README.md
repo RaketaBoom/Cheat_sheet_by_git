@@ -74,11 +74,11 @@ git log
 ### Как изменяются состояния файлов
 
 ```mermaid
-flowchart ID;
-A[untracked] -- "git add" --> B[staged];
-B -- "get commit" --> C[commited/tracked];
-C -- "Изменения" --> D[modified];
-D -- "git add" -- B;
+graph LR;
+untracked -- "git add" --> staged;
+staged -- "get commit" --> commited/tracked;
+commited/tracked -- "Изменения" --> modified;
+modified -- "git add" --> staged;
 
 ```
 
