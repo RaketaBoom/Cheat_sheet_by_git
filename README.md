@@ -91,3 +91,36 @@ modified -- "git add" --> staged;
 - `staged` (`Changes to be committed` в выводе `git status`);
 - `modified` (`Changes not staged for commit`);
 - `untracked` (`Untracked files`).
+
+
+### Про работу с ветками
+
+#### Клонирование чужого репозитория
+
+_git clone git@github.com:YandexPraktikum/first-project.git (от англ. clone, «клон», «копия»)_ — склонируй репозиторий с URL first-project.git из аккаунта YandexPraktikum на мой локальный компьютер.
+
+#### Создание веток
+
+_git branch feature/the-finest-branch (от англ. branch, «ветка»)_ — создай ветку от текущей с названием feature/the-finest-branch;
+_git checkout -b feature/the-finest-branch_ — создай ветку feature/the-finest-branch и сразу переключись на неё.
+
+#### Навигация по веткам
+_git branch (от англ. branch, «ветка»)_ — покажи, какие есть ветки в репозитории и в какой из них я нахожусь (текущая ветка будет отмечена символом *);
+_git branch -a_ — покажи все известные ветки, как локальные (в локальном репозитории), так и удалённые (в origin, или на GitHub).
+_git checkout feature/br_ — переключись на ветку feature/br.
+
+#### Сравнение веток
+_git diff main HEAD_ (от англ. difference, «отличие», «разница») — покажи разницу между веткой main и указателем на HEAD;
+_git diff HEAD~2 HEAD_ — покажи разницу между тем коммитом, который был два коммита назад, и текущим.
+
+#### Удаление веток
+_git branch -d br-name _— удали ветку br-name, но только если она является частью main;
+_git branch -D br-name_ — удали ветку br-name, даже если она не объединена с main.
+
+#### Слияние веток
+_git merge main_ (от англ. merge, «сливать», «поглощать») — объедини ветку main с текущей активной веткой. 
+
+#### Работа с удалённым репозиторием
+_git push -u origin my-branch_ (от англ. push, «толкнуть», «протолкнуть») — отправь новую ветку my-branch в удалённый репозиторий и свяжи локальную ветку с удалённой, чтобы при дополнительных коммитах можно было писать просто git push без -u;
+_git push my-branch_ — отправь дополнительные изменения в ветку my-branch, которая уже существует в удалённом репозитории;
+_git pull_ (от англ. pull, «вытянуть») — подтяни изменения текущей ветки из удалённого репозитория.
